@@ -11,7 +11,13 @@
 #    WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 #    License for the specific language governing permissions and limitations
 #    under the License.
+# ================================================
+# A script for creating Terraform project template
+#
+# Usage: terracutter --project NAME
+# ================================================
 import argparse
+import os
 
 
 def create_parser():
@@ -27,9 +33,20 @@ def create_parser():
     return parser
 
 
+def create_project_root(project):
+    """Creates project root directory with sub-directories.
+
+    Args:
+        project (str): the name of the project
+    """
+    os.makedirs(project)
+
+
 def main():
     parser = create_parser()
-    parser.parse_args()
+    args = parser.parse_args()
+
+    create_project_root(args.project)
 
 
 if __name__ == '__main__':

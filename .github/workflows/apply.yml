@@ -1,0 +1,15 @@
+name: 'apply'
+
+on:
+  workflow_dispatch:
+    inputs:
+      project_name:
+        description: 'project name'
+        required: true
+        default: 'dummy'
+      apply_changes:
+        type: choice
+        description: Apply changes?
+        options:
+          - 'no'
+          - 'yes'

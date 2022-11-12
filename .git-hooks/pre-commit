@@ -1,3 +1,4 @@
 #!/bin/sh
 
 make fmt-check
+make validate
